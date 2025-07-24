@@ -1,0 +1,20 @@
+[mtyfsadik@mtrx-node06pd lab9]$ nano config_ops445.yaml
+[mtyfsadik@mtrx-node06pd lab9]$ cat config_ops445.yaml
+all:
+  hosts:
+    myvm:
+      ansible_host: myvmlab.senecapolytechnic.ca
+      ansible_port: 7362
+      ansible_user: student
+      ansible_ssh_private_key_file: /home/mtyfsadik/.ssh/id_rsa_ops445
+
+[mtyfsadik@mtrx-node06pd lab9]$ ansible -i config_ops445.yaml myvm -m ping
+
+myvm | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[mtyfsadik@mtrx-node06pd lab9]$ 
